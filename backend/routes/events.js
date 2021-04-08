@@ -9,13 +9,14 @@ router.route('/').get((req,res)=>{
 
 router.route('/add').post((req,res)=>
 {
+    const username=req.body.username;
     const title=req.body.title;
-    const description=req.body.title;
+    const description=req.body.description;
     const address=req.body.address;
     const locationUpload=req.body.locationUpload;
     const peopleNeeded=req.body.peopleNeeded;
 
-    const newEvent=new Event({title,description,address,locationUpload
+    const newEvent=new Event({username,title,description,address,locationUpload
         ,peopleNeeded});
 
     newEvent.save()
