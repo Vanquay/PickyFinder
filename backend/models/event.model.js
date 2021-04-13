@@ -5,6 +5,7 @@ const eventSchema=new Schema(
     {
         username:{type:String, required:true},
         title:{type:String, required:true},
+        category:{type:String,required:true},
         description:{type:String, required:true},
         address:{type:String, required:true},
         locationUpload:{data:Buffer,contentType:String, required:false},
@@ -13,5 +14,5 @@ const eventSchema=new Schema(
     {timestamp:true}
 );
 
-const Exercise=mongoose.model('Event',eventSchema);
-module.exports=Exercise;
+const Event=mongoose.model('Event',eventSchema);
+module.exports=Event;

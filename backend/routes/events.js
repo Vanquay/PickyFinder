@@ -11,13 +11,14 @@ router.route('/').get((req,res)=>{
 router.route('/add').post((req,res)=>
 {
     const username=req.body.username;
+    const category=req.body.category;
     const title=req.body.title;
     const description=req.body.description;
     const address=req.body.address;
     const locationUpload=req.body.locationUpload;
     const peopleNeeded=req.body.peopleNeeded;
 
-    const newEvent=new Event({username,title,description,address,locationUpload
+    const newEvent=new Event({username,category,title,description,address,locationUpload
         ,peopleNeeded});
 
     newEvent.save()
@@ -46,6 +47,7 @@ router.route("/update/:id").post((req,res)=>
             {
                 events.username=req.params.username;
                 events.title=req.params.title;
+                events.category=req.params.category;
                 events.description=req.params.description;
                 events.address=req.params.address;
                 events.locationUpload=req.params.locationUpload;
