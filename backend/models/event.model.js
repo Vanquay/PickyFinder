@@ -8,8 +8,9 @@ const eventSchema=new Schema(
         category:{type:String,required:true},
         description:{type:String, required:true},
         address:{type:String, required:true},
-        locationUpload:{data:Buffer,contentType:String, required:false},
+        locationUpload:{type:String, required:false},
         peopleNeeded:{type:Number,required:true},
+        date:{type:Date,required:true}
     },
     {timestamp:true}
 );

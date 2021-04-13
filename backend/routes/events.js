@@ -17,9 +17,10 @@ router.route('/add').post((req,res)=>
     const address=req.body.address;
     const locationUpload=req.body.locationUpload;
     const peopleNeeded=req.body.peopleNeeded;
+    const date=Date.parse(req.body.date);
 
     const newEvent=new Event({username,category,title,description,address,locationUpload
-        ,peopleNeeded});
+        ,peopleNeeded,date});
 
     newEvent.save()
         .then(()=>res.json('Event added'))
