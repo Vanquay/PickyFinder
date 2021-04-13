@@ -5,9 +5,10 @@ const userSchema=new Schema(
     {
     username:{type:String, required:true, trim:true, unique:true, trim:true, minlength:5},
     password:{type:String, required:true},
-    profilePicture:{data:Buffer, contentType:String, required:false},
+    profilePicture:{type:String, required:false},
     },
     {timestamps:true}
+    
 );
 
 const User=mongoose.model('User',userSchema);
