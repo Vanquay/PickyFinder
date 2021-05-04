@@ -7,18 +7,20 @@ import EventsList from "./components/events-list.component";
 import CreateEvent from "./components/create-event.component";
 import EditEvent from "./components/edit-event.component";
 import CreateUser from "./components/create-user.component";
+import Login from "./components/login.component";
 
 function App() {
   return (
     <Router>
-      <div className="container">
+      
       <Navbar />
       <br/>
       <Route path="/" exact component={EventsList} />
       <Route path="/edit/:id" component={EditEvent} />
       <Route path="/create" component={CreateEvent} />
       <Route path="/user" component={CreateUser} />
-      </div>
+      <Route path="/login" component={Login} />
+      
     </Router>
   );
 }
